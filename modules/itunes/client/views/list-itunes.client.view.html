@@ -1,0 +1,25 @@
+<section data-ng-controller="ItunesController" data-ng-init="search()">
+	<div>
+		<h1 class="page-header">List</h1>
+	</div>
+	<div class="row" >
+		<div class="col-md-6 form-group">
+			<input class="form-control col-md-4" type="text" ng-model="searchText" placeholder="Songs, Artist, Track.............." / ng-change="filter(searchText)">
+		</div>
+	</div>
+	<div class="row margin_top_10" >
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+			<div data-ng-repeat="itune in itunes" class="list-group-item">
+				<p><label>Country:</label>{{itune.country}}</p>
+				<p><label>Artist Name:</label>{{itune.artistName}}</p>
+				<p><label>Track Name:</label>{{itune.trackName}}</p>
+				<p><label>Collection Name:</label>{{itune.collectionName}}</p>
+				<p><label>Collection Price:</label>{{itune.collectionPrice}}</p>
+				<p><label>Track Price:</label>{{itune.trackPrice}}</p>
+			</div>
+		</div>
+	</div>
+	<div class="alert alert-warning text-center" data-ng-if="itunes.$resolved && !itunes.length">
+		No data yet.
+	</div>
+</section>
